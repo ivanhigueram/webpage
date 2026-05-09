@@ -1,0 +1,25 @@
+<ul class="teaching-list">
+{{- range $course := .Site.Data.teaching }}
+  <li class="teaching-item">
+    <h3 class="teaching-title">
+      {{- $heading := $course.code -}}
+      {{- if $course.title }}{{ $heading = printf "%s: %s" $course.code $course.title }}{{ end -}}
+      {{- if $course.url -}}
+        <a href="{{ $course.url }}">{{ $heading }}<i class="fas fa-arrow-up-right-from-square teaching-title-icon" aria-hidden="true"></i></a>
+      {{- else -}}
+        {{ $heading }}
+      {{- end -}}
+    </h3>
+    <p class="teaching-term">{{ $course.term }}</p>
+    {{- with $course.professors }}<p class="teaching-profs">with {{ . | markdownify }}</p>{{ end }}
+    {{- with $course.description }}<p class="teaching-description">{{ . | markdownify }}</p>{{ end }}
+    {{- with $course.materials }}
+    <ul class="teaching-materials">
+      {{- range . }}
+      <li><a href="{{ .url }}">{{ .label }}</a></li>
+      {{- end }}
+    </ul>
+    {{- end }}
+  </li>
+{{- end }}
+</ul>

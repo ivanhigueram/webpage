@@ -1,0 +1,9 @@
+<ul class="news-timeline">
+{{- range .Site.Data.news }}
+  <li class="news-item">
+    <span class="news-date">{{ .display }}</span>
+    <span class="news-sep" aria-hidden="true">│</span>
+    <span class="news-body">{{ .body | markdownify }}</span>
+  </li>
+{{- end }}
+</ul>

@@ -1,11 +1,10 @@
 @import "variables";
 
-// Internal variables
-//$y-small: 0.6rem;
-//$y-medium: 1.0rem;
 $y-small: 0.6rem;
 $y-medium: 1.0rem;
 
+$body-font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+$mono-font: "Inconsolata", "JetBrains Mono", ui-monospace, monospace;
 
 // Placeholders
 %link-default {
@@ -40,18 +39,118 @@ $y-medium: 1.0rem;
 // Style
 body {
     background-color: $background;
+    font-family: $body-font;
+    color: $black;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
 * {
     color: $black;
-    font-family: "Inconsolata";
-    line-height: 1.2;
 }
 .container {
     max-width: $max-width;
 }
-.navbar-brand {
-    @extend %link-dark;
-    font-size: 2rem;
+code, pre, kbd, samp {
+    font-family: $mono-font;
+}
+
+// Social icon row (used in hero and anywhere else)
+.social-links {
+    list-style: none;
+    padding: 0;
+    margin: $y-small 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.55em;
+    font-size: 1.1rem;
+
+    li {
+        line-height: 1;
+        padding: 0;
+    }
+    a {
+        color: $red;
+        text-decoration: none;
+        transition: opacity 0.15s ease;
+        &:hover {
+            color: $red;
+            opacity: 0.65;
+            text-decoration: none;
+        }
+    }
+    i {
+        font-size: 1.05rem;
+        vertical-align: middle;
+    }
+}
+
+// Hero (slim-style)
+.hero {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+
+    .hero__intro {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+    .hero__name {
+        font-family: $mono-font;
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0 0 0.5rem 0;
+        line-height: 1.1;
+        a, a:hover { @extend %link-dark; }
+    }
+    .hero__line {
+        margin: 0.1rem 0;
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+    .hero__pronouns,
+    .hero__email {
+        font-family: $mono-font;
+        font-size: 0.85rem;
+        opacity: 0.85;
+    }
+    .social-links {
+        justify-content: flex-start;
+        margin-top: 0.7rem;
+    }
+    .hero__nav {
+        margin-top: 0.7rem;
+        font-family: $mono-font;
+        font-size: 0.95rem;
+        a { @extend %link-default; }
+        .hero__nav-sep {
+            margin: 0 0.35em;
+            opacity: 0.5;
+        }
+    }
+    .hero__photo {
+        flex: 0 0 auto;
+        margin: 0;
+        img {
+            display: block;
+            border-radius: 50%;
+            object-fit: cover;
+            width: 180px;
+            height: 180px;
+        }
+    }
+}
+@media (max-width: 600px) {
+    .hero {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+        .social-links { justify-content: center; }
+        .hero__nav { text-align: center; }
+        .hero__photo img { width: 140px; height: 140px; }
+    }
 }
 .nav-link {
     @extend %link-default;
@@ -62,12 +161,14 @@ body {
     }
     p {
         margin-bottom: $y-small;
-	text-align: justify;
+        text-align: left;
     }
     h1, h2, h3, h4, h5, h6 {
+        font-family: $mono-font;
         font-size: medium;
         font-weight: bold;
-	text-align: justify;
+        text-align: left;
+        letter-spacing: -0.01em;
         margin: $y-medium 0 $y-small 0;
     }
     @for $i from 1 through 4 {
@@ -122,107 +223,273 @@ body {
 	text-decoration-color: $conferences;
 	text-decoration-skip-ink: none;
     }
-    #paper-button {
-          border-color: $paper;
-          color: $paper;
-          background-color: $background;
-    }
-    #code-button {
-          border-color: $code;
-          color: $code;
-          background-color: $background;
-    }
-    #project-button {
-           border-color: #ff8299;
-           color: #ff8299;
-    }
     .button {
-  	border-radius: 20px;
-  	border-style: solid;
-  	border-width: 2px;
-  	background-color: white;
-  	text-align: center;
-  	transition: all 0.2s;
-  	cursor: pointer;
-  	padding-top:5px;
-  	padding-bottom:5px;
-  	padding-left:10px;
-  	padding-right:10px;
-  	font-size: 15px;
+        display: inline-block;
+        border-radius: 20px;
+        border: 2px solid;
+        background-color: $background;
+        text-align: center;
+        text-decoration: none;
+        transition: all 0.2s;
+        padding: 4px 12px;
+        font-family: $mono-font;
+        font-size: 0.85rem;
+        line-height: 1.2;
+        margin: 2px 4px 2px 0;
+        &:hover {
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
     }
-    .button span {
-      cursor: pointer;
-      display: inline-block;
-      position: relative;
-      transition: 0.5s;
+    .button-paper {
+        border-color: $paper;
+        color: $paper;
+        & * { color: $paper; }
+        &:hover { color: $paper; background-color: rgba($paper, 0.12); }
     }
-    .button span:after {
-      content: '\00bb';
-      position: absolute;
-      opacity: 0;
-      top: 0;
-      right: -20px;
-      transition: 0.2s;
+    .button-code {
+        border-color: $code;
+        color: $code;
+        & * { color: $code; }
+        &:hover { color: $code; background-color: rgba($code, 0.12); }
     }
-    .button:hover span {
-      padding-right: 25px;
+    .pub-list {
+        margin: 0;
+        padding: 0;
     }
-    .button:hover span:after {
-      opacity: 1;
-      right: 0;
+    .pub-entry {
+        padding: $y-medium 0;
+        border-bottom: 1px solid rgba($black, 0.08);
+        &:last-child { border-bottom: none; }
+    }
+    .pub-summary {
+        font-weight: normal;
+        margin-bottom: 0.45rem;
+    }
+    .pub-title {
+        font-family: $body-font;
+        font-size: 1.05rem;
+        font-weight: 600;
+        margin: 0 0 0.2rem 0;
+        line-height: 1.3;
+    }
+    .pub-meta {
+        font-family: $mono-font;
+        font-size: 0.82rem;
+        margin: 0;
+        opacity: 0.9;
+        & * { color: inherit; }
+    }
+    .pub-meta .pub-sep {
+        margin: 0 0.4em;
+        opacity: 0.55;
+    }
+    .pub-authors {
+        font-size: 0.88rem;
+        margin: 0.15rem 0 0.4rem 0;
+        opacity: 0.85;
+    }
+    .pub-description {
+        margin: 0.5rem 0 0 0;
+        padding: 0.1rem 0 0.1rem 1.25rem;
+        border-left: 2px solid rgba($red, 0.25);
+    }
+    .pub-blurb {
+        font-style: italic;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        margin: 0 0 0.5rem 0;
+        opacity: 0.85;
+    }
+    .pub-chips {
+        list-style: none;
+        padding: 0;
+        margin: 0.4rem 0 0 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        li { padding: 0; }
+        li:before { content: none !important; }
+    }
+    .pub-chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35em;
+        font-family: $mono-font;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        padding: 3px 9px;
+        border-radius: 3px;
+        line-height: 1.4;
+        vertical-align: middle;
+        border: 1px solid transparent;
+        text-decoration: none;
+    }
+    .pub-chip-icon {
+        font-size: 0.78rem;
+        line-height: 1;
+    }
+    // Filled = label (publication type)
+    .pub-chip--type {
+        font-weight: 600;
+    }
+    .pub-chip--published {
+        background-color: rgba($publications, 0.18);
+        color: $publications;
+        & * { color: $publications; }
+    }
+    .pub-chip--working {
+        background-color: rgba($working, 0.18);
+        color: $working;
+        & * { color: $working; }
+    }
+    .pub-chip--workshop {
+        background-color: rgba($conferences, 0.18);
+        color: $conferences;
+        & * { color: $conferences; }
+    }
+    // Outlined = clickable link (paper / code / etc.)
+    .pub-chip--link {
+        background-color: transparent;
+        transition: background-color 0.15s ease;
+        &:hover { text-decoration: none; }
+    }
+    .pub-chip--link-paper {
+        border-color: $paper;
+        color: $paper;
+        & * { color: $paper; }
+        &:hover { color: $paper; background-color: rgba($paper, 0.18); }
+    }
+    .pub-chip--link-code {
+        border-color: $code;
+        color: $code;
+        & * { color: $code; }
+        &:hover { color: $code; background-color: rgba($code, 0.18); }
+    }
+    .pub-notes {
+        list-style: disc inside;
+        padding-left: 0.4rem;
+        margin: 0.4rem 0 0 0;
+        font-size: 0.88rem;
+        opacity: 0.85;
+        li:before { content: none !important; }
+    }
+
+    // Teaching
+    .teaching-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .teaching-item {
+        padding: $y-medium 0;
+        border-bottom: 1px solid rgba($black, 0.08);
+        &:last-child { border-bottom: none; }
+        &:before { content: none !important; }
+    }
+    .teaching-title {
+        font-family: $body-font;
+        font-size: 1.05rem;
+        font-weight: 600;
+        margin: 0 0 0.15rem 0;
+        line-height: 1.3;
+        a:hover { text-decoration: underline; }
+    }
+    .teaching-title-icon {
+        font-size: 0.7rem;
+        margin-left: 0.4em;
+        opacity: 0.75;
+        vertical-align: middle;
+    }
+    .teaching-term {
+        font-family: $mono-font;
+        font-size: 0.82rem;
+        margin: 0 0 0.15rem 0;
+        opacity: 0.9;
+    }
+    .teaching-profs {
+        font-style: italic;
+        font-size: 0.85rem;
+        margin: 0 0 0.4rem 0;
+        opacity: 0.85;
+    }
+    .teaching-description {
+        font-style: italic;
+        font-size: 0.85rem;
+        margin: 0;
+        line-height: 1.5;
+        opacity: 0.85;
+    }
+    .teaching-materials {
+        list-style: disc inside;
+        padding-left: 0.4rem;
+        margin: 0.4rem 0 0 0;
+        font-size: 0.9rem;
+        li:before { content: none !important; }
+    }
+    .news-timeline {
+        list-style: none;
+        padding-left: 0;
+        margin: $y-small 0 $y-medium 0;
+        font-size: 0.95rem;
+    }
+    .news-item {
+        display: flex;
+        align-items: baseline;
+        gap: 0.6rem;
+        padding: 0.25rem 0;
+        line-height: 1.45;
+    }
+    .news-date {
+        flex: 0 0 auto;
+        font-family: $mono-font;
+        font-size: 0.85rem;
+        color: $red;
+        min-width: 5.2rem;
+    }
+    .news-sep {
+        flex: 0 0 auto;
+        color: $red;
+        opacity: 0.55;
+    }
+    .news-body {
+        flex: 1 1 auto;
+        p { margin: 0; display: inline; }
+    }
+    @media (max-width: 600px) {
+        .news-item {
+            flex-wrap: wrap;
+            gap: 0.25rem 0.5rem;
+        }
+        .news-sep { display: none; }
     }
     figure.item {
-        vertical-align: top;
         display: block;
-        margin: $y-medium auto;
+        margin: $y-medium 0 $y-medium $y-medium;
         text-align: center;
         float: right;
+        width: $avatar-size;
     }
-    img {
-        border-radius: 70%;
-        float: right;
-	object-fit: cover;
-        margin: -8px 0 0 16px;
+    figure.item img {
+        display: block;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto;
         height: $avatar-size;
+        width: $avatar-size;
         max-width: 100%;
-        width: $avatar-size -10
     }
-    @media (max-width: 600 px) {
+    @media (max-width: 600px) {
         figure.item {
-            vertical-align: top;
-            display: block;
+            float: none;
             margin: $y-medium auto;
-            text-align: center;
-            float: center;
+            width: 100%;
         }
-        img {
-            border-radius: 70%;
-            float: center;
-            object-fit: cover;
-            margin: -8px 0 0 16px;
-            height: $avatar-size;
-            width: $avatar-size - 10;
+        figure.item img {
+            height: 180px;
+            width: 180px;
         }
-    }
-    .social-links {
-        list-style: none;
-        font-size: 15px;
-        text-align: center;
-        flex: 7;
-    }
-    .social-links i {
-        margin-right: 3px;
-    }
-    .social-links li {
-        display: inline;
-        padding: 0 4px;
-        line-height: 0;
-    }
-    .social-links a {
-        color: $red;
-    }
-    .social-links a:hover {
-        color: $red;
     }
     ol {
         counter-reset: list;

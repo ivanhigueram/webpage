@@ -2,9 +2,7 @@
 title = "About"
 +++
 
-## about me 
-
-{{< headshot src="/avatar4.jpg" name="" add="" >}}
+## about me
 
 I am a PhD candidate in the Earth System Science department at the [Stanford
 Doerr School of Sustainability][5]. I am part of the [EchoLab][6] and lucky to
@@ -13,7 +11,7 @@ Fellowship][9] and the Ram and Vijay Shriram Sustainability Fellowship. In the
 past, I was a pre-doctoral fellow at the Energy Policy Institute (EPIC) at the
 University of Chicago, working at the [Climate Impact Lab][3]. In a previous
 life, I was a Data Scientist at [DSaPP][4] (now @CMU), and a research analyst
-at the Central Bank of Colombia. 
+at the Central Bank of Colombia.
 
 ## research interests
 
@@ -23,67 +21,25 @@ nature in data-scarce scenarios. I am interested in downscaling climate data
 products, multi-modal classification, measurement error in causal inference
 models, and wildfires in the Western US.
 
-## news and updates
+## news {#news}
 
-  - **[12/25]** I will be orally presenting our Air Pollution Benefits paper at 
-    [AGU Fall Meeting 2025][10] in New Orleans.
-  - **[11/23]** Me and my accepted paper on wildfire house' burning
-    risk will be in the CompSust Workshop at NeurIPS 2023 in New Orleans. 
-  - **[09/23]** I received the Stanford Data Science Fellowship (2 years) and
-    now I am part of the SDS PhD Scholars 💻🤖.
-  - **[08/23]** I am presenting our work on wildfire house' burning risk using
-    multimodal classification and recent developments in contrastive learning
-    in [TWEEDS][8] in Portland.
+{{< news >}}
 
-## <u class="publications">publications</u>, <u class="working">working papers</u> & <u class="conferences">workshops</u>
- 
-<p>&nbsp;</p>
+## publications {#publications}
 
-<mark class="workm"> 1. Zheng, Z., **Higuera-Mendieta, I.**, Lee, R., Newhouse, D., Kilic, T., Ermon, S., Burke, M., & Lobell, D.B. (2026). A satellite foundation model for improved wealth monitoring. arXiv:2604.23166</mark>
+{{< publications kinds="published,workshop" >}}
 
-<button class="button" onclick="location.href='https://arxiv.org/abs/2604.23166'" id="paper-button">arXiv</button>
+## ongoing projects {#ongoing-projects}
 
-<mark class="workm"> 2. **Higuera-Mendieta, I.**, & Burke, M. (2026). The air pollution benefits of low severity fire [*Forthcoming @ Science*].</mark> 
+{{< publications kinds="working" hideKind="true" >}}
 
+## teaching {#teaching}
 
-<button class="button" onclick="location.href='https://doi.org/10.31223/X52M9N'" id="paper-button">EarthArXiv</button>
+{{< teaching >}}
 
-<mark class=pubm> 3. Qiu, M.*, Callahan, C.W.*, **Higuera-Mendieta, I.**, Rennels, L., Parthum, B., Diffenbaugh, N.S., & Burke, M. (2026). Valuing wildfire smoke–related mortality benefits from climate mitigation, Proc. Natl. Acad (PNAS). Sci. U.S.A. 123 (8)</mark>.
-
-<buttom class=button onclick="location.href='https://www.pnas.org/doi/10.1073/pnas.2533772123'" id="paper-button">Paper</button>
-
-<mark class=pubm> 4. Kelp, M., Burke, M., Qiu, M., **Higuera-Mendieta, I.**, Liu, T., & Diffenbaugh, N. S. (2025). Effect of recent prescribed burning and land management on wildfire burn severity and smoke emissions in the western United States. AGU Advances, 6.</mark>
-
-<button class="button" onclick="location.href='https://doi.org/10.1029/2025AV001682'" id="paper-button">Paper</button>
- 
-<mark class="confm">5. **Higuera-Mendieta, I.**, Wen, J., & Burke, M. (2023). A table is worth a thousand pictures: Multi-modal contrastive learning in house burning classification in wildfire events. *NeurIPS 2023 Computational Sustainability: Promises and Pitfalls from Theory to Deployment*.</mark>
-   
-<button class="button" onclick="location.href='https://openreview.net/forum?id=7KTQsrUIOy'" id="paper-button">OpenReview</button>
-   
-<mark class="workm">6. Farah, A., **Higuera-Mendieta, I.**, Song, Y., Franke, J. A., Moyer, E., & Nakamura, N. (2020). Arctic airmass displacement and reduced midlatitudes wintertime temperature variability under climate change.</mark> 
-   - Presented at the American Geophysical Union Meeting AGU  2020.
-
-<mark class="pubm">7. Rodolfa, K. T., Salomon, E., Haynes, L., **Higuera-Mendieta, I.**, Larson, J., & Ghani, R. (2020). Case study: Predictive fairness to reduce misdemeanor recidivism through social service interventions. In *Proceedings of the 2020 conference on fairness, accountability, and transparency* (142–153). FAT\* '20</mark>
-   
-   <button class="button" onclick="location.href='https://arxiv.org/abs/2001.09233'" id="paper-button">Paper</button>
-   <button class="button" onclick="location.href='https://github.com/dssg/aequitas'" id="code-button">Code</button>
-
-<mark class="pubm">8. Bonilla-Mejia, L., & **Higuera-Mendieta, I.** (2019). Protected Areas under Weak Institutions: Evidence from Colombia. *World Development*, 122</mark> 
-   
-   <button class="button" onclick="location.href='https://www.sciencedirect.com/science/article/pii/S0305750X19301718'" id="paper-button">Paper</button>
-   <button class="button" onclick="location.href='https://github.com/banco-republica-research/deforestacion'" id="code-button">Code</button>
- 
-   - Ranked second-best paper by the International Sustainable Development
-      Research Society.
-   - Press coverage (in Spanish): [El Tiempo][1]
-
-
-[1]: https://www.eltiempo.com/vida/medio-ambiente/deforestacion-en-colombia-territorios-colectivos-para-frenarla-379204
-[3]: http://www.impactlab.org/ 
+[3]: http://www.impactlab.org/
 [4]: http://www.datasciencepublicpolicy.org/
 [5]: https://sustainability.stanford.edu/
 [6]: https://www.stanfordecholab.com/
 [7]: https://web.stanford.edu/~mburke/
-[8]: https://tweeds.io/
 [9]: https://datascience.stanford.edu/programs/stanford-data-science-scholars-program
-[10]: https://agu.confex.com/agu/agu25/meetingapp.cgi/Paper/1969875

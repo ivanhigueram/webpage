@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html><head>
-    <title> Iván Higuera-Mendieta </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 
-
-    <title>404 Page not found</title>
+    <title>404 Page not found · iván higuera-mendieta</title>
     <meta name="description" content="My place in the interwebs">
-    <meta name="author" content='Ivan Higuera-Mendieta'>
+    <meta name="author" content='Ivan Higuera-Mendieta'><meta property="og:title" content="404 Page not found · iván higuera-mendieta">
+    <meta property="og:description" content="My place in the interwebs">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.ivanhigueram.com/404.html">
+    <meta property="og:image" content="https://www.ivanhigueram.com/avatar4.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="404 Page not found · iván higuera-mendieta">
+    <meta name="twitter:description" content="My place in the interwebs">
+    <meta name="twitter:image" content="https://www.ivanhigueram.com/avatar4.jpg">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" integrity="sha512-rt/SrQ4UNIaGfDyEXZtNcyWvQeOq0QLygHluFQcSjaGB04IxWhal71tKuzP6K8eYXYB6vJV4pHkXcmFGGQ1/0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.3/css/academicons.min.css" integrity="sha512-vaoopdl+FJahyY2ddhsbDj8yDiRuyUYH/vIjF3z+cBg0sKc07NAQmUYli8volCGlW9OwlQyjVsr7Lh6qAManlw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/sass/researcher.min.css">
     <link rel="icon" type="image/ico" href="https://www.ivanhigueram.com/favicon.ico">
@@ -79,37 +87,78 @@
 
 
     <body><div class="container mt-5">
-    <nav class="navbar navbar-expand-sm flex-column flex-sm-row text-nowrap p-0">
-        <a class="navbar-brand mx-0 mr-sm-auto" href="https://www.ivanhigueram.com/" title="iván higuera-mendieta">
-          
-          iván higuera-mendieta
-        </a>
-        <div class="navbar-nav flex-row flex-wrap justify-content-center">
+    <header class="hero">
+        <div class="hero__intro">
+            <h1 class="hero__name">
+                <a href="https://www.ivanhigueram.com/">iván higuera-mendieta</a>
+            </h1>
+            <p class="hero__line">Earth System Science PhD, Stanford</p>
+            <p class="hero__line hero__pronouns">he/him/el</p>
+            <p class="hero__line hero__email">ihigueme [at] stanford [dot] edu</p>
+
+            <ul class="social-links">
+                
+                <li>
+                    <a href="/cv.pdf" rel="me" aria-label="CV (PDF)" title="CV (PDF)">
+                        <i class="far fa-file-lines" aria-hidden="true"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://github.com/ivanhigueram/" rel="me" aria-label="GitHub" title="GitHub">
+                        <i class="fab fa-github-alt" aria-hidden="true"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://www.twitter.com/ivanhigueram" rel="me" aria-label="Twitter" title="Twitter">
+                        <i class="fab fa-twitter" aria-hidden="true"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://sigmoid.social/@ivanhigueram" rel="me" aria-label="Mastodon" title="Mastodon">
+                        <i class="fab fa-mastodon" aria-hidden="true"></i>
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://bsky.app/profile/ivanhigueram.com" rel="me" aria-label="Bluesky" title="Bluesky">
+                        <i class="fab fa-bluesky" aria-hidden="true"></i>
+                    </a>
+                </li>
+                
+            </ul>
+
             
+            <nav class="hero__nav">
                 
                 
-                    <a class="nav-item nav-link" href="/" title="about">
-                        about
-                    </a>
-                    
-                        <span class="nav-item navbar-text mx-1"></span>
+                    <a href="/cv.pdf" title="cv">cv</a>
+                    <span class="hero__nav-sep" aria-hidden="true">/</span>
+                
+                    <a href="/#news" title="news">news</a>
+                    <span class="hero__nav-sep" aria-hidden="true">/</span>
+                
+                    <a href="/#publications" title="publications">publications</a>
+                    <span class="hero__nav-sep" aria-hidden="true">/</span>
+                
+                    <a href="/#ongoing-projects" title="ongoing projects">ongoing projects</a>
+                    <span class="hero__nav-sep" aria-hidden="true">/</span>
+                
+                    <a href="/#teaching" title="teaching">teaching</a>
+                    <span class="hero__nav-sep" aria-hidden="true">/</span>
+                
+                    <a href="https://topcat.prose.sh/" title="blog">blog</a>
                     
                 
-                    <a class="nav-item nav-link" href="/contact" title="contact">
-                        contact
-                    </a>
-                    
-                        <span class="nav-item navbar-text mx-1"></span>
-                    
-                
-                    <a class="nav-item nav-link" href="https://topcat.prose.sh/" title="blog">
-                        blog
-                    </a>
-                    
-                
+            </nav>
             
         </div>
-    </nav>
+        <figure class="hero__photo">
+            <img src="https://www.ivanhigueram.com/avatar4.jpg" alt="Ivan Higuera-Mendieta"/>
+        </figure>
+    </header>
 </div>
 <hr>
 <div id="content">
@@ -121,24 +170,12 @@
         </div><div id="footer" class="mb-5">
     <hr>
     
-    <div class="container text-center">
-        
-            <a href="https://github.com/ivanhigueram/" class="fab fa-github fa-1x" title="GitHub"></a>
-        
-            <a href="https://www.twitter.com/ivanhigueram" class="fab fa-twitter fa-1x" title="Twitter"></a>
-        
-            <a href="https://sigmoid.social/@ivanhigueram" class="fab fa-mastodon fa-1x" title="Mastodon"></a>
-        
-    </div>
-    
-    
         <div class="container text-center">
             <a href="https://www.eff.org/issues/do-not-track" title="Made with 🧡  and without tracking cookies" ><small>Made with 🧡  and without tracking cookies</small></a>
         </div>
         <div class="container text-center">
             <a href="https://daisylu.github.io/" title="Photo credits to Daisy Lu" ><small>Photo credits to Daisy Lu</small></a>
         </div>
-
     
 </div>
 </body>

@@ -1,12 +1,22 @@
 DATESTRING := $(shell date +"%Y-%m-%d_%H-%M-%S")
 
 
-.PHONY: all public deploy update
+CV_SRC := ../cv/main.pdf
+CV_DST := static/cv.pdf
 
-all: public deploy invalidate.json update clean
+.PHONY: all public deploy update sync-cv
 
+all: sync-cv public deploy invalidate.json update clean
 
-public: 
+sync-cv:
+	@if [ -f $(CV_SRC) ]; then \
+		echo "Syncing CV from $(CV_SRC) -> $(CV_DST)"; \
+		cp $(CV_SRC) $(CV_DST); \
+	else \
+		echo "Warning: $(CV_SRC) not found, leaving $(CV_DST) untouched"; \
+	fi
+
+public: sync-cv
 	echo "Building website!"
 	hugo build
 

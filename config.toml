@@ -10,6 +10,9 @@ math = true    # enable KaTeX (https://katex.org/) globally
   profilePicture = "/avatar4.jpg"
   description = "My place in the interwebs"
   favicon = "favicon.ico"  # path to a .ico to use as favicon
+  affiliation = "Earth System Science PhD, Stanford"
+  pronouns = "he/him/el"
+  email = "ihigueme [at] stanford [dot] edu"
   [params.footer]
     text = "Made with 🧡  and without tracking cookies"
     url = "https://www.eff.org/issues/do-not-track"
@@ -19,7 +22,12 @@ math = true    # enable KaTeX (https://katex.org/) globally
 # use 'fab' when brand icons, use 'fas' when standard solid icons.
 
 [[params.socialIcons]]
-icon = "fab fa-github"
+icon = "far fa-file-lines"
+title = "CV (PDF)"
+url = "/cv.pdf"
+
+[[params.socialIcons]]
+icon = "fab fa-github-alt"
 title = "GitHub"
 url = "https://github.com/ivanhigueram/"
 
@@ -33,22 +41,41 @@ icon = "fab fa-mastodon"
 title = "Mastodon"
 url = "https://sigmoid.social/@ivanhigueram"
 
+[[params.socialIcons]]
+icon = "fab fa-bluesky"
+title = "Bluesky"
+url = "https://bsky.app/profile/ivanhigueram.com"
+
 [permalinks]
-  "/" = "/:filename"
+  "/" = "/:contentbasename"
 
 [menu]
   [[menu.main]]
-    name = "about"
-    url = "/"
+    name = "cv"
+    url = "/cv.pdf"
     weight = 1
   [[menu.main]]
-    name = "contact"
-    url = "/contact"
+    name = "news"
+    url = "/#news"
     weight = 2
+  [[menu.main]]
+    name = "publications"
+    url = "/#publications"
+    weight = 3
+  [[menu.main]]
+    name = "ongoing projects"
+    url = "/#ongoing-projects"
+    weight = 4
+  [[menu.main]]
+    name = "teaching"
+    url = "/#teaching"
+    weight = 5
   [[menu.main]]
     name = "blog"
     url = "https://topcat.prose.sh/"
-    weight = 3
+    weight = 6
 
 [markup.goldmark.renderer]
   unsafe = true  # allow raw HTML in markdown files
+[markup.goldmark.parser.attribute]
+  title = true   # allow {#id} attribute syntax on headings

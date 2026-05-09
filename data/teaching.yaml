@@ -1,0 +1,19 @@
+- code: "GEP 268"
+  title: "Topics and Methods in Global Environmental Policy I"
+  term: "Winter 2023 (as ESS 268), Winter 2025, Winter 2026"
+  url: "https://gep268.stanford.edu"
+  professors: "Marshall Burke and Solomon Hsiang"
+  description: |
+    TA'd Graduate-level course aimed at students who want to use applied
+    econometrics to causally measure environmental change.
+
+- code: "GEP 269"
+  title: "Topics and Methods in Global Environmental Policy II"
+  term: "Spring 2025, Spring 2026"
+  url: "https://gep269.stanford.edu"
+  professors: "Marshall Burke and Solomon Hsiang"
+  description: |
+    TA'd Graduate-level course aimed at students who want to use more 
+    advanced tools from causal inference and ML tomeasure environmental 
+    change. I led teaching sessions on balancing estimators and deep 
+    learning, and built and maintain the course website.

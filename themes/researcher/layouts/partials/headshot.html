@@ -1,10 +1,10 @@
 <figure class="item">
-    <img src="{{.Site.Params.profilePicture | absURL }}" alt="profile picture"/>
+    <img src="{{ .Site.Params.profilePicture | absURL }}" alt="profile picture"/>
     <ul class="social-links">
         {{ range $item := .Site.Params.socialIcons }}
         <li>
-            <a href="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}">
-                <i class="{{ $item.icon }} fa-2x" aria-hidden="true"></i>
+            <a href="{{ $item.url }}" rel="me" aria-label="{{ $item.title }}" title="{{ $item.title }}">
+                <i class="{{ $item.icon }}" aria-hidden="true"></i>
             </a>
         </li>
         {{ end }}

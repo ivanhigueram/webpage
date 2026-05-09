@@ -1,0 +1,46 @@
+{{- $kindLabel := dict "published" "paper" "working" "working paper" "workshop" "workshop paper" -}}
+{{- $linkIcon := dict "paper" "far fa-file-lines" "code" "fas fa-code" -}}
+{{- $kindsArg := .Get "kinds" | default "published,working,workshop" -}}
+{{- $kinds := split $kindsArg "," -}}
+{{- $hideKind := eq (.Get "hideKind") "true" -}}
+<dl class="pub-list">
+{{- range $pub := .Site.Data.publications }}
+  {{- if in $kinds $pub.kind }}
+  <div class="pub-entry">
+    <dt class="pub-summary">
+      <h3 class="pub-title">{{ $pub.title }}</h3>
+      <p class="pub-meta">
+        <span class="pub-venue">{{ $pub.venue | markdownify }}</span>
+        <span class="pub-sep" aria-hidden="true">·</span>
+        <span class="pub-year">{{ $pub.year }}</span>
+      </p>
+      <p class="pub-authors">{{ $pub.authors | markdownify }}</p>
+    </dt>
+    <dd class="pub-description">
+      {{- with $pub.description }}<p class="pub-blurb">{{ . | markdownify }}</p>{{ end }}
+      <ul class="pub-chips">
+        {{- if not $hideKind }}
+        <li><span class="pub-chip pub-chip--type pub-chip--{{ $pub.kind }}">{{ index $kindLabel $pub.kind }}</span></li>
+        {{- end }}
+        {{- with $pub.links }}
+        {{- range . }}
+        <li>
+          <a class="pub-chip pub-chip--link pub-chip--link-{{ .kind }}" href="{{ .url }}">
+            <i class="{{ index $linkIcon .kind }} pub-chip-icon" aria-hidden="true"></i><span>{{ .label }}</span>
+          </a>
+        </li>
+        {{- end }}
+        {{- end }}
+      </ul>
+      {{- with $pub.notes }}
+      <ul class="pub-notes">
+        {{- range . }}
+        <li>{{ . | markdownify }}</li>
+        {{- end }}
+      </ul>
+      {{- end }}
+    </dd>
+  </div>
+  {{- end }}
+{{- end }}
+</dl>

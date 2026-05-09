@@ -1,0 +1,103 @@
+- title: A satellite foundation model for improved wealth monitoring
+  authors: "Z. Zheng, **I. Higuera-Mendieta**, R. Lee, D. Newhouse, T. Kilic, S. Ermon, M. Burke & D. B. Lobell"
+  venue: arXiv preprint
+  year: 2026
+  kind: working
+  description: |
+    Pre-trained satellite-imagery foundation model whose
+    embeddings improve poverty and wealth-asset prediction in
+    data-scarce regions, particularly across Sub-Saharan Africa.
+  links:
+    - { label: arXiv, url: "https://arxiv.org/abs/2604.23166", kind: paper }
+
+- title: The air pollution benefits of low severity fire
+  authors: "**I. Higuera-Mendieta** & M. Burke"
+  venue: "Forthcoming, *Science*"
+  year: 2026
+  kind: published
+  description: |
+    Causally quantifies the air-quality benefits of
+    prescribed (low-severity) fire relative to wildfire smoke, combining
+    satellite measurements of fire behaviour with a synthetic-control
+    design across the western US.
+  links:
+    - { label: EarthArXiv, url: "https://doi.org/10.31223/X52M9N", kind: paper }
+    - { label: Code,       url: "https://github.com/echolab-stanford/prescribed_fires", kind: code }
+
+- title: Valuing wildfire smoke–related mortality benefits from climate mitigation
+  authors: "M. Qiu\\*, C. W. Callahan\\*, **I. Higuera-Mendieta**, L. Rennels, B. Parthum, N. S. Diffenbaugh & M. Burke"
+  venue: "*PNAS* 123 (8)"
+  year: 2026
+  kind: published
+  description: |
+    Estimates the avoided wildfire-smoke mortality and
+    monetised health benefits associated with aggressive climate
+    mitigation pathways in the contiguous United States.
+  links:
+    - { label: Paper, url: "https://www.pnas.org/doi/10.1073/pnas.2533772123", kind: paper }
+
+- title: Effect of recent prescribed burning and land management on wildfire burn severity and smoke emissions in the western United States
+  authors: "M. Kelp, M. Burke, M. Qiu, **I. Higuera-Mendieta**, T. Liu & N. S. Diffenbaugh"
+  venue: "*AGU Advances* 6"
+  year: 2025
+  kind: published
+  description: |
+    Empirical analysis of how prescribed burning and
+    recent land-management decisions have shaped wildfire burn severity
+    and smoke emissions across the western US over the past two decades.
+  links:
+    - { label: Paper, url: "https://doi.org/10.1029/2025AV001682", kind: paper }
+
+- title: "A table is worth a thousand pictures: Multi-modal contrastive learning in house burning classification"
+  authors: "**I. Higuera-Mendieta**, J. Wen & M. Burke"
+  venue: NeurIPS Computational Sustainability Workshop
+  year: 2023
+  kind: workshop
+  description: |
+    CLIP-style multi-modal contrastive model that fuses
+    NAIP aerial imagery with structured tabular features (rendered as
+    text prompts) to classify whether individual houses burned during
+    California wildfires (2010–2020).
+  links:
+    - { label: OpenReview, url: "https://openreview.net/forum?id=7KTQsrUIOy", kind: paper }
+
+- title: Arctic airmass displacement and reduced midlatitudes wintertime temperature variability under climate change
+  authors: "A. Farah, **I. Higuera-Mendieta**, Y. Song, J. A. Franke, E. Moyer & N. Nakamura"
+  venue: AGU Fall Meeting (presentation)
+  year: 2020
+  kind: working
+  description: |
+    Investigates how Arctic warming displaces cold
+    airmasses equator-ward and reduces wintertime temperature variability
+    across the northern midlatitudes under climate change.
+
+- title: "Case study: Predictive fairness to reduce misdemeanor recidivism through social service interventions"
+  authors: "K. T. Rodolfa, E. Salomon, L. Haynes, **I. Higuera-Mendieta**, J. Larson & R. Ghani"
+  venue: "*Proc. FAT\\* '20*"
+  year: 2020
+  kind: published
+  description: |
+    Applies predictive-fairness audits to a social-service
+    targeting model aimed at reducing misdemeanor recidivism. The
+    accompanying tooling was released as the open-source `aequitas`
+    package.
+  links:
+    - { label: Paper, url: "https://arxiv.org/abs/2001.09233", kind: paper }
+    - { label: Code,  url: "https://github.com/dssg/aequitas", kind: code }
+
+- title: "Protected Areas under Weak Institutions: Evidence from Colombia"
+  authors: "L. Bonilla-Mejía & **I. Higuera-Mendieta**"
+  venue: "*World Development* 122"
+  year: 2019
+  kind: published
+  description: |
+    Uses high-resolution remote-sensing measurements of
+    deforestation in Colombia to test whether protected areas curb
+    forest loss when state institutions are weak, finding heterogeneous
+    effects that depend on the surrounding land-tenure regime.
+  links:
+    - { label: Paper, url: "https://www.sciencedirect.com/science/article/pii/S0305750X19301718", kind: paper }
+    - { label: Code,  url: "https://github.com/banco-republica-research/deforestacion", kind: code }
+  notes:
+    - Ranked second-best paper by the International Sustainable Development Research Society.
+    - "Press coverage (in Spanish): [El Tiempo](https://www.eltiempo.com/vida/medio-ambiente/deforestacion-en-colombia-territorios-colectivos-para-frenarla-379204)."
