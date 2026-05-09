@@ -21,8 +21,8 @@ public: sync-cv
 	hugo build
 
 deploy: public
-	echo "Copying public/ to S3"
-	aws s3 cp public/ ${PUBLIC_S3_BUCKET} --recursive
+	echo "Syncing public/ to S3 (deletes orphan objects)"
+	aws s3 sync public/ ${PUBLIC_S3_BUCKET} --delete
 
 invalidate.json:
 	echo '{ \
