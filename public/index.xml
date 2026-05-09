@@ -4,25 +4,22 @@
     <title>About on iván higuera-mendieta</title>
     <link>https://www.ivanhigueram.com/</link>
     <description>Recent content in About on iván higuera-mendieta</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://www.ivanhigueram.com/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo</generator>
+    <language>en</language>
+    <atom:link href="https://www.ivanhigueram.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>https://www.ivanhigueram.com/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://www.ivanhigueram.com/about/</guid>
-      <description>about me I am a PhD student in the Earth Systems Science department at the Stanford Doerr School of Sustainability studying our changing environment. I am part of the EchoLab advised by Marshall Burke. In the past, I was a pre-doctoral fellow at the Energy Policy Institute (EPIC) at the University of Chicago, working at the Climate Impact Lab. In a previous life, I was a Data Scientist at DSaPP (now at CMU), and a career bureaucrat at the Central Bank of Colombia.</description>
+      <description>&lt;h2 id=&#34;about-me&#34;&gt;about me&lt;/h2&gt;&#xA;&#xA;&lt;figure class=&#34;item&#34;&gt;&#xA;    &lt;img src=&#34;https://www.ivanhigueram.com/avatar4.jpg&#34; alt=&#34;&#34;/&gt;&#xA;    &lt;ul class=&#34;social-links&#34;&gt;&#xA;        &#xA;           &lt;li&gt;&#xA;              &lt;a href=&#34;https://github.com/ivanhigueram/&#34; rel=&#34;me&#34; aria-label=&#34;GitHub&#34;&gt;&#xA;                &lt;i class=&#34;fab fa-github fa-2x&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xA;            &lt;/a&gt;&#xA;        &lt;/li&gt;&#xA;        &#xA;           &lt;li&gt;&#xA;              &lt;a href=&#34;https://www.twitter.com/ivanhigueram&#34; rel=&#34;me&#34; aria-label=&#34;Twitter&#34;&gt;&#xA;                &lt;i class=&#34;fab fa-twitter fa-2x&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xA;            &lt;/a&gt;&#xA;        &lt;/li&gt;&#xA;        &#xA;           &lt;li&gt;&#xA;              &lt;a href=&#34;https://sigmoid.social/@ivanhigueram&#34; rel=&#34;me&#34; aria-label=&#34;Mastodon&#34;&gt;&#xA;                &lt;i class=&#34;fab fa-mastodon fa-2x&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;&#xA;            &lt;/a&gt;&#xA;        &lt;/li&gt;&#xA;        &#xA;    &lt;/ul&gt;&#xA;&lt;/figure&gt;&#xA;&#xA;&lt;p&gt;I am a PhD candidate in the Earth System Science department at the &lt;a href=&#34;https://sustainability.stanford.edu/&#34;&gt;Stanford&#xA;Doerr School of Sustainability&lt;/a&gt;. I am part of the &lt;a href=&#34;https://www.stanfordecholab.com/&#34;&gt;EchoLab&lt;/a&gt; and lucky to&#xA;be advised by &lt;a href=&#34;https://web.stanford.edu/~mburke/&#34;&gt;Marshall Burke&lt;/a&gt;. I am supported by a &lt;a href=&#34;https://datascience.stanford.edu/programs/stanford-data-science-scholars-program&#34;&gt;Stanford Data Science&#xA;Fellowship&lt;/a&gt; and the Ram and Vijay Shriram Sustainability Fellowship. In the&#xA;past, I was a pre-doctoral fellow at the Energy Policy Institute (EPIC) at the&#xA;University of Chicago, working at the &lt;a href=&#34;http://www.impactlab.org/&#34;&gt;Climate Impact Lab&lt;/a&gt;. In a previous&#xA;life, I was a Data Scientist at &lt;a href=&#34;http://www.datasciencepublicpolicy.org/&#34;&gt;DSaPP&lt;/a&gt; (now @CMU), and a research analyst&#xA;at the Central Bank of Colombia.&lt;/p&gt;</description>
     </item>
-    
     <item>
       <title>Contact</title>
       <link>https://www.ivanhigueram.com/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
       <guid>https://www.ivanhigueram.com/contact/</guid>
-      <description>Email me 💌 at ihigueme at stanford.edu
-For the security-minded folks 🕵 -----BEGIN PGP PUBLIC KEY BLOCK----- mDMEY1xvHxYJKwYBBAHaRw8BAQdAgkVJiy0H/eL18f+W0V228OHpW1S+HT0xCF4U UWfMsvC0PEl2YW4gSGlndWVyYS1NZW5kaWV0YSAobWFpbF9rZXkpIDxiZW5ueXRo ZWJhbGxAZmFzdG1haWwuY29tPoiZBBMWCgBBFiEEcOJ/TM5FJm7YdQWXMaS7RBnY vkYFAmNcbx8CGwMFCRUYAAAFCwkIBwICIgIGFQoJCAsCBBYCAwECHgcCF4AACgkQ MaS7RBnYvkbEjQEAmq01r5TXcXjNyUc9AntxaR9vKIDfOBkKCIFq5ilESg4A/3F5 TEuEnym9VUOU7JUlZnkzOE8BBS1x4zbhCYcF3AYOuDgEY1xvHxIKKwYBBAGXVQEF AQEHQCJoT/Xk3w2NR7fm4cmFIbvRroQf+9SsIA2KkGONwjkQAwEIB4h+BBgWCgAm FiEEcOJ/TM5FJm7YdQWXMaS7RBnYvkYFAmNcbx8CGwwFCRUYAAAACgkQMaS7RBnY vkbvywEAmGM30GVscJxpiOf3rPyjPwI5U7a8IaD17la/Q/kz96MBALzL0jqBjvXj LT5oLWjW3l6FnSSmzQPzdF5cVJi5X+QK =KJj3 -----END PGP PUBLIC KEY BLOCK----- </description>
+      <description>&lt;center&gt;&#xA;&lt;p&gt;✉️  : ihigueme &lt;code&gt;at&lt;/code&gt; stanford.edu&lt;/p&gt;&#xA;&lt;p&gt;💌  hello &lt;code&gt;at&lt;/code&gt; ivanhigueram.com&lt;/p&gt;&#xA;&lt;/center&gt;</description>
     </item>
-    
   </channel>
 </rss>

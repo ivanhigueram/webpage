@@ -3,14 +3,14 @@ DATESTRING := $(shell date +"%Y-%m-%d_%H-%M-%S")
 
 .PHONY: all public deploy update
 
-all: public deploy invalidate.json update
+all: public deploy invalidate.json update clean
 
 
-public:
+public: 
 	echo "Building website!"
 	hugo build
 
-deploy:
+deploy: public
 	echo "Copying public/ to S3"
 	aws s3 cp public/ ${PUBLIC_S3_BUCKET} --recursive
 

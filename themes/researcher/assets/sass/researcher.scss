@@ -1,8 +1,11 @@
 @import "variables";
 
 // Internal variables
+//$y-small: 0.6rem;
+//$y-medium: 1.0rem;
 $y-small: 0.6rem;
 $y-medium: 1.0rem;
+
 
 // Placeholders
 %link-default {
@@ -181,7 +184,8 @@ body {
 	object-fit: cover;
         margin: -8px 0 0 16px;
         height: $avatar-size;
-        width: $avatar-size - 10;
+        max-width: 100%;
+        width: $avatar-size -10
     }
     @media (max-width: 600 px) {
         figure.item {

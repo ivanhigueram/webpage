@@ -1,56 +1,109 @@
 <!DOCTYPE html>
 <html><head>
-    <title> | Iván Higuera </title>
+    <title> Iván Higuera-Mendieta </title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
 
     <title>About</title>
     <meta name="description" content="My place in the interwebs">
     <meta name="author" content='Ivan Higuera-Mendieta'>
 
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" 
-    href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" 
-    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" 
-    crossorigin="anonymous" />
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-    crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" integrity="sha512-rt/SrQ4UNIaGfDyEXZtNcyWvQeOq0QLygHluFQcSjaGB04IxWhal71tKuzP6K8eYXYB6vJV4pHkXcmFGGQ1/0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.3/css/academicons.min.css" integrity="sha512-vaoopdl+FJahyY2ddhsbDj8yDiRuyUYH/vIjF3z+cBg0sKc07NAQmUYli8volCGlW9OwlQyjVsr7Lh6qAManlw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/sass/researcher.min.css">
+    <link rel="icon" type="image/ico" href="https://www.ivanhigueram.com/favicon.ico">
+    </head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+<script>
+  let x;
+  let y;
+  let r;
+  let g;
+  let b;
+  let pg;
 
-    
-    <link rel="stylesheet" href="https://www.ivanhigueram.com/sass/researcher.min.css">
+  function setup() {
+    pixelDensity(1);
+    const cnv = createCanvas(windowWidth, windowHeight);
+    cnv.id('sketch');
 
-    
-        <link rel="icon" type="image/ico" href="https://www.ivanhigueram.com/favicon.ico">
-    
+    const displayRatio = windowWidth / windowHeight;
+    pg = createGraphics(100 * displayRatio, 100);
+    x = pg.width / 2;
+    y = pg.height / 2;
+    r = random(0, 255);
+    g = random(0, 255);
+    b = random(0, 255);
 
-    
-</head>
+    pg.noSmooth();
+    noSmooth();
+  }
+
+  function draw() {
+    let nextX = x + random(-5, 5);
+    let nextY = y + random(-5, 5);
+    nextX = constrain(nextX, 0, pg.width);
+    nextY = constrain(nextY, 0, pg.height);
+
+    r += random(-10, 10);
+    g += random(-10, 10);
+    b += random(-10, 10);
+    r = constrain(r, 0, 255);
+    g = constrain(g, 0, 255);
+    b = constrain(b, 0, 255);
+
+    pg.stroke(r, g, b);
+    pg.line(nextX, nextY, x, y);
+
+    image(pg, 0, 0, width, height);
+
+    x = nextX;
+    y = nextY;
+  }
+
+  function mousePressed() {
+    x = pg.width * (mouseX / width);
+    y = pg.height * (mouseY / height);
+    r = random(0, 255);
+    g = random(0, 255);
+    b = random(0, 255);
+  }
+
+  function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+  }
+</script>
+
 
     <body><div class="container mt-5">
     <nav class="navbar navbar-expand-sm flex-column flex-sm-row text-nowrap p-0">
-        <a class="navbar-brand mx-0 mr-sm-auto" href="https://www.ivanhigueram.com/">iván higuera-mendieta</a>
+        <a class="navbar-brand mx-0 mr-sm-auto" href="https://www.ivanhigueram.com/" title="iván higuera-mendieta">
+          
+          iván higuera-mendieta
+        </a>
         <div class="navbar-nav flex-row flex-wrap justify-content-center">
             
                 
                 
-                    <a class="nav-item nav-link" href="/about">
+                    <a class="nav-item nav-link" href="/" title="about">
                         about
                     </a>
                     
-                        <span class="nav-item navbar-text mx-1">/</span>
+                        <span class="nav-item navbar-text mx-1"></span>
                     
                 
-                    <a class="nav-item nav-link" href="/contact">
+                    <a class="nav-item nav-link" href="/contact" title="contact">
                         contact
                     </a>
                     
-                        <span class="nav-item navbar-text mx-1">/</span>
+                        <span class="nav-item navbar-text mx-1"></span>
                     
                 
-                    <a class="nav-item nav-link" href="/resume.pdf">
-                        cv
+                    <a class="nav-item nav-link" href="https://topcat.prose.sh/" title="blog">
+                        blog
                     </a>
                     
                 
@@ -64,18 +117,12 @@
     <h2 id="about-me">about me</h2>
 
 <figure class="item">
-    <img src="/avatar3.png" alt=""/>
+    <img src="/avatar4.jpg" alt=""/>
     <ul class="social-links">
         
            <li>
               <a href="https://github.com/ivanhigueram/" rel="me" aria-label="GitHub">
                 <i class="fab fa-github fa-2x" aria-hidden="true"></i>
-            </a>
-        </li>
-        
-           <li>
-              <a href="https://www.gitlab.com/ivanhigueram" rel="me" aria-label="GitLab">
-                <i class="fab fa-gitlab fa-2x" aria-hidden="true"></i>
             </a>
         </li>
         
@@ -94,57 +141,83 @@
     </ul>
 </figure>
 
-<p>I am a PhD student in the Earth Systems Science department at the <a href="https://sustainability.stanford.edu/">Stanford
-Doerr School of Sustainability</a> studying our changing environment. I am part
-of the <a href="https://www.stanfordecholab.com/">EchoLab</a> advised by <a href="https://web.stanford.edu/~mburke/">Marshall Burke</a>. In the past, I was a
-pre-doctoral fellow at the Energy Policy Institute (EPIC) at the University of
-Chicago, working at the <a href="http://www.impactlab.org/">Climate Impact Lab</a>. In a previous life, I was a
-Data Scientist at <a href="http://www.datasciencepublicpolicy.org/">DSaPP</a> (now at CMU), and a career bureaucrat at the
-Central Bank of Colombia.</p>
+<p>I am a PhD candidate in the Earth System Science department at the <a href="https://sustainability.stanford.edu/">Stanford
+Doerr School of Sustainability</a>. I am part of the <a href="https://www.stanfordecholab.com/">EchoLab</a> and lucky to
+be advised by <a href="https://web.stanford.edu/~mburke/">Marshall Burke</a>. I am supported by a <a href="https://datascience.stanford.edu/programs/stanford-data-science-scholars-program">Stanford Data Science
+Fellowship</a> and the Ram and Vijay Shriram Sustainability Fellowship. In the
+past, I was a pre-doctoral fellow at the Energy Policy Institute (EPIC) at the
+University of Chicago, working at the <a href="http://www.impactlab.org/">Climate Impact Lab</a>. In a previous
+life, I was a Data Scientist at <a href="http://www.datasciencepublicpolicy.org/">DSaPP</a> (now @CMU), and a research analyst
+at the Central Bank of Colombia.</p>
 <h2 id="research-interests">research interests</h2>
 <p>I evaluate the effects of environmental changes on humans. I also develop
-machine learning to create cool datasets that help us track humans and nature
-in data-scarce scenarios. I am also curious about the atmospheric circulation
-and weather/climate modeling, particularly how to downscale climate products
-using physics-informed interpolations.</p>
-<h2 id="publications">publications</h2>
-<ol>
-<li>
-<p>Bonilla-Mejia, L., &amp; <strong>Higuera-Mendieta, I.</strong> (2019). Protected Areas under
-Weak Institutions: Evidence from Colombia. <em>World Development</em>, 122.
-<a href="https://www.sciencedirect.com/science/article/pii/S0305750X19301718">doi:10.1016/j.worlddev.2019.06.019</a>.</p>
+machine learning models to create cool datasets that help us track humans and
+nature in data-scarce scenarios. I am interested in downscaling climate data
+products, multi-modal classification, measurement error in causal inference
+models, and wildfires in the Western US.</p>
+<h2 id="news-and-updates">news and updates</h2>
 <ul>
-<li>Ranked second-best paper by the International Sustainable Development
-Research Society.</li>
-<li>Press coverage: <a href="https://www.eltiempo.com/vida/medio-ambiente/deforestacion-en-colombia-territorios-colectivos-para-frenarla-379204">El Tiempo</a></li>
+<li>[12/25] I will be orally presenting our Air Pollution Benefits paper at
+<a href="https://agu.confex.com/agu/agu25/meetingapp.cgi/Paper/1969875">AGU Fall Meeting 2025</a> in New Orleans.</li>
+<li><strong>[11/23]</strong> Me and my accepted paper on wildfire house&rsquo; burning
+risk will be in the CompSust Workshop at NeurIPS 2023 in New Orleans.</li>
+<li><strong>[09/23]</strong> I received the Stanford Data Science Fellowship (2 years) and
+now I am part of the SDS PhD Scholars 💻🤖.</li>
+<li><strong>[08/23]</strong> I am presenting our work on wildfire house&rsquo; burning risk using
+multimodal classification and recent developments in contrastive learning
+in <a href="https://tweeds.io/">TWEEDS</a> in Portland.</li>
 </ul>
-</li>
-<li>
-<p>Rodolfa, K. T., Salomon, E., Haynes, L., <strong>Higuera-Mendieta, I</strong>, Larson, J.,
-&amp; Ghani, R. (2020). Case study: Predictive fairness to reduce misdemeanor
-recidivism through social service interventions. In Proceedings of the 2020
-conference on fairness, accountability, and transparency (142–153). FAT* &lsquo;20
-. <a href="https://arxiv.org/abs/2001.09233">https://arxiv.org/abs/2001.09233</a>.</p>
-</li>
-<li>
-<p>Farah, A., <strong>Higuera-Mendieta, I</strong>, Song, Y., Franke, J. A., Moyer, E.,
+<h2 id="publications-working-papers--workshops"><u class="publications">publications</u>, <u class="working">working papers</u> &amp; <u class="conferences">workshops</u></h2>
+<p>&nbsp;</p>
+<p><mark class="workm"> 1. <strong>Higuera-Mendieta</strong>, I., &amp; Burke, M. (2025). The air pollution benefits of low severity fire [<em>In submission</em>].</mark></p>
+<p><button class="button" onclick="location.href='https://doi.org/10.31223/X52M9N'" id="paper-button">EarthArXiv</button></p>
+<p><mark class=pubm> 2.  Kelp, M., Burke, M., Qiu, M., <strong>Higuera-Mendieta, I.</strong>, Liu, T., &amp; Diffenbaugh, N. S. (2025). Effect of recent prescribed burning and land management on wildfire burn severity and smoke emissions in the western United States. AGU Advances, 6.</mark></p>
+<p><button class="button" onclick="location.href='https://doi.org/10.1029/2025AV001682'" id="paper-button">Paper</button></p>
+<p><mark class="confm">3. <strong>Higuera-Mendieta, I</strong>, Wen, J., &amp; Burke, M. (2023). A table is worth a thousand pictures: Multi-modal contrastive learning in house burning classification in wildfire events. <em>NeurIPS 2023 Computational Sustainability: Promises and Pitfalls from Theory to Deployment</em>.</mark></p>
+<p><button class="button" onclick="location.href='https://openreview.net/forum?id=7KTQsrUIOy'" id="paper-button">OpenReview</button></p>
+<p><mark class="workm">4. Farah, A., <strong>Higuera-Mendieta, I</strong>, Song, Y., Franke, J. A., Moyer, E.,
 &amp; Nakamura, N. (2020). Arctic airmass displacement and reduced midlatitudes
-wintertime temperature variability under climate change. <em>[In preparation for
-Geophysical Research Letters]</em>.</p>
+wintertime temperature variability under climate change.</mark></p>
 <ul>
 <li>Presented at the American Geophysical Union Meeting AGU  2020.</li>
 </ul>
-</li>
-</ol>
+<p><mark class="pubm">5. Rodolfa, K. T., Salomon, E., Haynes, L., <strong>Higuera-Mendieta, I</strong>, Larson, J.,&amp; Ghani, R. (2020). Case study: Predictive fairness to reduce misdemeanor
+recidivism through social service interventions. In <em>Proceedings of the 2020
+conference on fairness, accountability, and transparency</em> (142–153). FAT* &lsquo;20</mark></p>
+<p><button class="button" onclick="location.href='https://arxiv.org/abs/2001.09233'" id="paper-button">Paper</button>
+<button class="button" onclick="location.href='https://github.com/dssg/aequitas'" id="code-button">Code</button></p>
+<p><mark class="pubm">6. Bonilla-Mejia, L., &amp; <strong>Higuera-Mendieta, I.</strong> (2019). Protected Areas under Weak Institutions: Evidence from Colombia. <em>World Development</em>, 122</mark></p>
+<p><button class="button" onclick="location.href='https://www.sciencedirect.com/science/article/pii/S0305750X19301718'" id="paper-button">Paper</button>
+<button class="button" onclick="location.href='https://github.com/banco-republica-research/deforestacion'" id="code-button">Code</button></p>
+<ul>
+<li>Ranked second-best paper by the International Sustainable Development
+Research Society.</li>
+<li>Press coverage (in Spanish): <a href="https://www.eltiempo.com/vida/medio-ambiente/deforestacion-en-colombia-territorios-colectivos-para-frenarla-379204">El Tiempo</a></li>
+</ul>
 
 </div>
 
         </div><div id="footer" class="mb-5">
+    <hr>
     
-        <hr>
+    <div class="container text-center">
+        
+            <a href="https://github.com/ivanhigueram/" class="fab fa-github fa-1x" title="GitHub"></a>
+        
+            <a href="https://www.twitter.com/ivanhigueram" class="fab fa-twitter fa-1x" title="Twitter"></a>
+        
+            <a href="https://sigmoid.social/@ivanhigueram" class="fab fa-mastodon fa-1x" title="Mastodon"></a>
+        
+    </div>
+    
+    
         <div class="container text-center">
-            <a href="https://www.eff.org/issues/do-not-track"><small>Made with ❤️  and without tracking cookies</small></a>
+            <a href="https://www.eff.org/issues/do-not-track" title="Made with 🧡  and without tracking cookies" ><small>Made with 🧡  and without tracking cookies</small></a>
         </div>
+        <div class="container text-center">
+            <a href="https://daisylu.github.io/" title="Photo credits to Daisy Lu" ><small>Photo credits to Daisy Lu</small></a>
+        </div>
+
     
 </div>
 </body>

@@ -1,0 +1,4 @@
+.DS_Store
+.env
+.hugo_build.lock
+resources/

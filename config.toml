@@ -7,11 +7,11 @@ math = true    # enable KaTeX (https://katex.org/) globally
 
 [params]
   author = "Ivan Higuera-Mendieta"
-  profilePicture = "/avatar.jpg"
+  profilePicture = "/avatar4.jpg"
   description = "My place in the interwebs"
   favicon = "favicon.ico"  # path to a .ico to use as favicon
   [params.footer]
-    text = "Made with 🧡  and without tracking cooies"
+    text = "Made with 🧡  and without tracking cookies"
     url = "https://www.eff.org/issues/do-not-track"
     photocreds = "Photo credits to Daisy Lu" 
     urlphoto = "https://daisylu.github.io/"
@@ -39,7 +39,7 @@ url = "https://sigmoid.social/@ivanhigueram"
 [menu]
   [[menu.main]]
     name = "about"
-    url = "/about"
+    url = "/"
     weight = 1
   [[menu.main]]
     name = "contact"
