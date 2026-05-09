@@ -6,13 +6,16 @@ title = "About"
 ## about me
 
 I am a PhD candidate in the Earth System Science department at the [Stanford
-Doerr School of Sustainability][5]. I am part of the [EchoLab][6] and lucky to
-be advised by [Marshall Burke][7]. I am supported by a [Stanford Data Science
-Fellowship][9] and the Ram and Vijay Shriram Sustainability Fellowship. In the
-past, I was a pre-doctoral fellow at the Energy Policy Institute (EPIC) at the
-University of Chicago, working at the [Climate Impact Lab][3]. In a previous
-life, I was a Data Scientist at [DSaPP][4] (now @CMU), and a research analyst
-at the Central Bank of Colombia.
+Doerr School of Sustainability](https://sustainability.stanford.edu/). I am
+part of the [ECHO Lab](https://www.stanfordecholab.com/) and lucky to be
+advised by [Marshall Burke](https://web.stanford.edu/~mburke/). I am supported
+by a [Stanford Data Science Fellowship](https://datascience.stanford.edu/programs/stanford-data-science-scholars-program)
+and the Ram and Vijay Shriram Sustainability Fellowship. In the past, I was a
+pre-doctoral fellow at the Energy Policy Institute (EPIC) at the University of
+Chicago, working at the [Climate Impact Lab](http://www.impactlab.org/). In a
+previous life, I was a Data Scientist at
+[DSaPP](http://www.datasciencepublicpolicy.org/) (now @CMU), and a research
+analyst at the Central Bank of Colombia.
 
 ## research interests
 
@@ -46,10 +49,3 @@ models, and wildfires in the Western US.
 
 {{< teaching >}}
 {{< /band >}}
-
-[3]: http://www.impactlab.org/
-[4]: http://www.datasciencepublicpolicy.org/
-[5]: https://sustainability.stanford.edu/
-[6]: https://www.stanfordecholab.com/
-[7]: https://web.stanford.edu/~mburke/
-[9]: https://datascience.stanford.edu/programs/stanford-data-science-scholars-program

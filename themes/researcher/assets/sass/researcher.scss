@@ -158,6 +158,13 @@ code, pre, kbd, samp {
             object-fit: cover;
             width: 180px;
             height: 180px;
+            transition: filter 0.15s ease;
+            cursor: crosshair;
+        }
+        img:hover,
+        img:active {
+            filter: url(#dither);
+            image-rendering: pixelated;
         }
     }
 }

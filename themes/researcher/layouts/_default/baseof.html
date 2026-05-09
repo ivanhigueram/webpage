@@ -6,6 +6,7 @@
         {{- partial "math.html" . -}}
     {{ end }}
     <body>
+        {{- partial "dither.html" . -}}
         {{- partial "header.html" . -}}
         <div id="content">
         {{- block "main" . }}{{- end }}

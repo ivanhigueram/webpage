@@ -111,7 +111,20 @@
   }
 </script>
 
-    <body><div class="container mt-5">
+    <body><svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <filter id="dither" color-interpolation-filters="sRGB" x="0" y="0" width="100%" height="100%">
+    <feColorMatrix type="saturate" values="0" result="gray"/>
+    <feTurbulence type="fractalNoise" baseFrequency="2.2" numOctaves="2" seed="2" result="noiseRaw"/>
+    <feColorMatrix in="noiseRaw" type="saturate" values="0" result="noise"/>
+    <feComposite in="gray" in2="noise" operator="arithmetic" k1="0" k2=".55" k3=".55" k4="-.20" result="mixed"/>
+    <feComponentTransfer in="mixed">
+      <feFuncR type="discrete" tableValues="0.267 0.973"/>
+      <feFuncG type="discrete" tableValues="0.278 0.973"/>
+      <feFuncB type="discrete" tableValues="0.353 0.949"/>
+    </feComponentTransfer>
+  </filter>
+</svg>
+<div class="container mt-5">
     <header class="hero">
         <div class="hero__intro">
             <h1 class="hero__name">
@@ -189,14 +202,17 @@
 <section id="about" class="band band-cream">
   <div class="container">
 <h2 id="about-me">about me</h2>
-<p>I am a PhD candidate in the Earth System Science department at the [Stanford
-Doerr School of Sustainability][5]. I am part of the [EchoLab][6] and lucky to
-be advised by [Marshall Burke][7]. I am supported by a [Stanford Data Science
-Fellowship][9] and the Ram and Vijay Shriram Sustainability Fellowship. In the
-past, I was a pre-doctoral fellow at the Energy Policy Institute (EPIC) at the
-University of Chicago, working at the [Climate Impact Lab][3]. In a previous
-life, I was a Data Scientist at [DSaPP][4] (now @CMU), and a research analyst
-at the Central Bank of Colombia.</p>
+<p>I am a PhD candidate in the Earth System Science department at the <a href="https://sustainability.stanford.edu/">Stanford
+Doerr School of Sustainability</a>. I am
+part of the <a href="https://www.stanfordecholab.com/">ECHO Lab</a> and lucky to be
+advised by <a href="https://web.stanford.edu/~mburke/">Marshall Burke</a>. I am supported
+by a <a href="https://datascience.stanford.edu/programs/stanford-data-science-scholars-program">Stanford Data Science Fellowship</a>
+and the Ram and Vijay Shriram Sustainability Fellowship. In the past, I was a
+pre-doctoral fellow at the Energy Policy Institute (EPIC) at the University of
+Chicago, working at the <a href="http://www.impactlab.org/">Climate Impact Lab</a>. In a
+previous life, I was a Data Scientist at
+<a href="http://www.datasciencepublicpolicy.org/">DSaPP</a> (now @CMU), and a research
+analyst at the Central Bank of Colombia.</p>
 <h2 id="research-interests">research interests</h2>
 <p>I evaluate the effects of environmental changes on humans. I also develop
 machine learning models to create cool datasets that help us track humans and
@@ -466,7 +482,7 @@ econometrics to causally measure environmental change.</p>
   <li class="teaching-item">
     <h3 class="teaching-title"><a href="https://gep269.stanford.edu">GEP 269: Topics and Methods in Global Environmental Policy II<i class="fas fa-arrow-up-right-from-square teaching-title-icon" aria-hidden="true"></i></a></h3>
     <p class="teaching-term">Spring 2025, Spring 2026</p><p class="teaching-profs">with Marshall Burke and Solomon Hsiang</p><p class="teaching-description">TA&rsquo;d Graduate-level course aimed at students who want to use more
-advanced tools from causal inference and ML tomeasure environmental
+advanced tools from causal inference and ML to measure environmental
 change. I led teaching sessions on balancing estimators and deep
 learning, and built and maintain the course website.</p>
   </li>
