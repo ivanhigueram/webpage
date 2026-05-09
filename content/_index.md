@@ -2,6 +2,7 @@
 title = "About"
 +++
 
+{{< band id="about" tint="cream" >}}
 ## about me
 
 I am a PhD candidate in the Earth System Science department at the [Stanford
@@ -20,22 +21,31 @@ machine learning models to create cool datasets that help us track humans and
 nature in data-scarce scenarios. I am interested in downscaling climate data
 products, multi-modal classification, measurement error in causal inference
 models, and wildfires in the Western US.
+{{< /band >}}
 
-## news {#news}
+{{< band id="news" tint="mauve" >}}
+## news
 
 {{< news >}}
+{{< /band >}}
 
-## publications {#publications}
+{{< band id="publications" tint="green" >}}
+## publications
 
 {{< publications kinds="published,workshop" >}}
+{{< /band >}}
 
-## ongoing projects {#ongoing-projects}
+{{< band id="ongoing-projects" tint="orange" >}}
+## ongoing projects
 
 {{< publications kinds="working" hideKind="true" >}}
+{{< /band >}}
 
-## teaching {#teaching}
+{{< band id="teaching" tint="purple" >}}
+## teaching
 
 {{< teaching >}}
+{{< /band >}}
 
 [3]: http://www.impactlab.org/
 [4]: http://www.datasciencepublicpolicy.org/

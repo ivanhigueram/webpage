@@ -1,11 +1,25 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 <script>
-  let x;
-  let y;
-  let r;
-  let g;
-  let b;
+  // Dracula palette accents
+  const DRACULA = [
+    [255, 121, 198], // pink
+    [80,  250, 123], // green
+    [255, 184, 108], // orange
+    [189, 147, 249], // purple
+    [139, 233, 253], // cyan
+    [241, 250, 140], // yellow
+    [255, 85,  85],  // red
+  ];
+
+  let x, y;
   let pg;
+  let palA, palB, palT;
+
+  function pickPalIdx(exclude) {
+    let i = exclude;
+    while (i === exclude) i = Math.floor(Math.random() * DRACULA.length);
+    return i;
+  }
 
   function setup() {
     pixelDensity(1);
@@ -16,9 +30,10 @@
     pg = createGraphics(100 * displayRatio, 100);
     x = pg.width / 2;
     y = pg.height / 2;
-    r = random(0, 255);
-    g = random(0, 255);
-    b = random(0, 255);
+
+    palA = Math.floor(Math.random() * DRACULA.length);
+    palB = pickPalIdx(palA);
+    palT = 0;
 
     pg.noSmooth();
     noSmooth();
@@ -30,14 +45,19 @@
     nextX = constrain(nextX, 0, pg.width);
     nextY = constrain(nextY, 0, pg.height);
 
-    r += random(-10, 10);
-    g += random(-10, 10);
-    b += random(-10, 10);
-    r = constrain(r, 0, 255);
-    g = constrain(g, 0, 255);
-    b = constrain(b, 0, 255);
+    palT += 0.004;
+    if (palT >= 1) {
+      palA = palB;
+      palB = pickPalIdx(palA);
+      palT = 0;
+    }
+    const a = DRACULA[palA];
+    const b = DRACULA[palB];
+    const r = lerp(a[0], b[0], palT);
+    const g = lerp(a[1], b[1], palT);
+    const bl = lerp(a[2], b[2], palT);
 
-    pg.stroke(r, g, b);
+    pg.stroke(r, g, bl);
     pg.line(nextX, nextY, x, y);
 
     image(pg, 0, 0, width, height);
@@ -49,13 +69,12 @@
   function mousePressed() {
     x = pg.width * (mouseX / width);
     y = pg.height * (mouseY / height);
-    r = random(0, 255);
-    g = random(0, 255);
-    b = random(0, 255);
+    palA = Math.floor(Math.random() * DRACULA.length);
+    palB = pickPalIdx(palA);
+    palT = 0;
   }
 
   function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
   }
 </script>
-

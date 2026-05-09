@@ -32,12 +32,26 @@
     </head>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
 <script>
-  let x;
-  let y;
-  let r;
-  let g;
-  let b;
+  
+  const DRACULA = [
+    [255, 121, 198], 
+    [80,  250, 123], 
+    [255, 184, 108], 
+    [189, 147, 249], 
+    [139, 233, 253], 
+    [241, 250, 140], 
+    [255, 85,  85],  
+  ];
+
+  let x, y;
   let pg;
+  let palA, palB, palT;
+
+  function pickPalIdx(exclude) {
+    let i = exclude;
+    while (i === exclude) i = Math.floor(Math.random() * DRACULA.length);
+    return i;
+  }
 
   function setup() {
     pixelDensity(1);
@@ -48,9 +62,10 @@
     pg = createGraphics(100 * displayRatio, 100);
     x = pg.width / 2;
     y = pg.height / 2;
-    r = random(0, 255);
-    g = random(0, 255);
-    b = random(0, 255);
+
+    palA = Math.floor(Math.random() * DRACULA.length);
+    palB = pickPalIdx(palA);
+    palT = 0;
 
     pg.noSmooth();
     noSmooth();
@@ -62,14 +77,19 @@
     nextX = constrain(nextX, 0, pg.width);
     nextY = constrain(nextY, 0, pg.height);
 
-    r += random(-10, 10);
-    g += random(-10, 10);
-    b += random(-10, 10);
-    r = constrain(r, 0, 255);
-    g = constrain(g, 0, 255);
-    b = constrain(b, 0, 255);
+    palT += 0.004;
+    if (palT >= 1) {
+      palA = palB;
+      palB = pickPalIdx(palA);
+      palT = 0;
+    }
+    const a = DRACULA[palA];
+    const b = DRACULA[palB];
+    const r = lerp(a[0], b[0], palT);
+    const g = lerp(a[1], b[1], palT);
+    const bl = lerp(a[2], b[2], palT);
 
-    pg.stroke(r, g, b);
+    pg.stroke(r, g, bl);
     pg.line(nextX, nextY, x, y);
 
     image(pg, 0, 0, width, height);
@@ -81,16 +101,15 @@
   function mousePressed() {
     x = pg.width * (mouseX / width);
     y = pg.height * (mouseY / height);
-    r = random(0, 255);
-    g = random(0, 255);
-    b = random(0, 255);
+    palA = Math.floor(Math.random() * DRACULA.length);
+    palB = pickPalIdx(palA);
+    palT = 0;
   }
 
   function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
   }
 </script>
-
 
     <body><div class="container mt-5">
     <header class="hero">
@@ -168,15 +187,16 @@
 </div>
 <hr>
 <div id="content">
-<div class="container">
-    <h2 id="about-me">about me</h2>
-<p>I am a PhD candidate in the Earth System Science department at the <a href="https://sustainability.stanford.edu/">Stanford
-Doerr School of Sustainability</a>. I am part of the <a href="https://www.stanfordecholab.com/">EchoLab</a> and lucky to
-be advised by <a href="https://web.stanford.edu/~mburke/">Marshall Burke</a>. I am supported by a <a href="https://datascience.stanford.edu/programs/stanford-data-science-scholars-program">Stanford Data Science
-Fellowship</a> and the Ram and Vijay Shriram Sustainability Fellowship. In the
+<section id="about" class="band band-cream">
+  <div class="container">
+<h2 id="about-me">about me</h2>
+<p>I am a PhD candidate in the Earth System Science department at the [Stanford
+Doerr School of Sustainability][5]. I am part of the [EchoLab][6] and lucky to
+be advised by [Marshall Burke][7]. I am supported by a [Stanford Data Science
+Fellowship][9] and the Ram and Vijay Shriram Sustainability Fellowship. In the
 past, I was a pre-doctoral fellow at the Energy Policy Institute (EPIC) at the
-University of Chicago, working at the <a href="http://www.impactlab.org/">Climate Impact Lab</a>. In a previous
-life, I was a Data Scientist at <a href="http://www.datasciencepublicpolicy.org/">DSaPP</a> (now @CMU), and a research analyst
+University of Chicago, working at the [Climate Impact Lab][3]. In a previous
+life, I was a Data Scientist at [DSaPP][4] (now @CMU), and a research analyst
 at the Central Bank of Colombia.</p>
 <h2 id="research-interests">research interests</h2>
 <p>I evaluate the effects of environmental changes on humans. I also develop
@@ -184,6 +204,12 @@ machine learning models to create cool datasets that help us track humans and
 nature in data-scarce scenarios. I am interested in downscaling climate data
 products, multi-modal classification, measurement error in causal inference
 models, and wildfires in the Western US.</p>
+
+  </div>
+</section>
+
+<section id="news" class="band band-mauve">
+  <div class="container">
 <h2 id="news">news</h2>
 <ul class="news-timeline">
   <li class="news-item">
@@ -208,6 +234,11 @@ models, and wildfires in the Western US.</p>
   </li>
 </ul>
 
+  </div>
+</section>
+
+<section id="publications" class="band band-green">
+  <div class="container">
 <h2 id="publications">publications</h2>
 <dl class="pub-list">
   <div class="pub-entry">
@@ -373,6 +404,11 @@ effects that depend on the surrounding land-tenure regime.</p>
   </div>
 </dl>
 
+  </div>
+</section>
+
+<section id="ongoing-projects" class="band band-orange">
+  <div class="container">
 <h2 id="ongoing-projects">ongoing projects</h2>
 <dl class="pub-list">
   <div class="pub-entry">
@@ -416,6 +452,11 @@ across the northern midlatitudes under climate change.</p>
   </div>
 </dl>
 
+  </div>
+</section>
+
+<section id="teaching" class="band band-purple">
+  <div class="container">
 <h2 id="teaching">teaching</h2>
 <ul class="teaching-list">
   <li class="teaching-item">
@@ -432,8 +473,10 @@ learning, and built and maintain the course website.</p>
   </li>
 </ul>
 
+  </div>
+</section>
 
-</div>
+
 
         </div><div id="footer" class="mb-5">
     <hr>

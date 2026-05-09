@@ -54,6 +54,26 @@ code, pre, kbd, samp {
     font-family: $mono-font;
 }
 
+// Color-block sections
+.band {
+    width: 100%;
+    padding: 1.25rem 0;
+    border-top: 1px solid rgba($black, 0.05);
+    &:first-of-type {
+        border-top: none;
+        padding-top: 0.75rem;
+    }
+}
+.band > .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.band-cream  { background-color: rgba(244, 231, 206, 0.04); }
+.band-mauve  { background-color: rgba(189, 147, 249, 0.08); }
+.band-green  { background-color: rgba(80, 250, 123, 0.05); }
+.band-orange { background-color: rgba(255, 184, 108, 0.07); }
+.band-purple { background-color: rgba(255, 121, 198, 0.06); }
+
 // Social icon row (used in hero and anywhere else)
 .social-links {
     list-style: none;

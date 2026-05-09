@@ -1,0 +1,7 @@
+{{- $id := .Get "id" -}}
+{{- $tint := .Get "tint" -}}
+<section{{ with $id }} id="{{ . }}"{{ end }} class="band{{ with $tint }} band-{{ . }}{{ end }}">
+  <div class="container">
+{{ .Inner | markdownify }}
+  </div>
+</section>
